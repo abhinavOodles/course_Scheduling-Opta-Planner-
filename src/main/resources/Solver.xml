@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+    <!--    <environmentMode>FULL_ASSERT</environmentMode>-->
+    <solutionClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.TimeTable</solutionClass>
+    <entityClass> com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Course</entityClass>
+    <!--<environmentMode>FULL_ASSERT</environmentMode>-->
+    <scoreDirectorFactory>
+        <constraintProviderClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Constraints.constraintsProvider
+        </constraintProviderClass>
+        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+    </scoreDirectorFactory>
+    <constructionHeuristic>
+        <changeMoveSelector/>
+    </constructionHeuristic>
+    <localSearch>
+        <unionMoveSelector>
+            <changeMoveSelector>
+            </changeMoveSelector>
+            <swapMoveSelector>
+            </swapMoveSelector>
+        </unionMoveSelector>
+        <acceptor>
+            <lateAcceptanceSize>500</lateAcceptanceSize>
+        </acceptor>
+        <forager>
+            <acceptedCountLimit>20</acceptedCountLimit>
+        </forager>
+    </localSearch>
+    <termination>
+        <unimprovedSecondsSpentLimit>60</unimprovedSecondsSpentLimit>
+    </termination>
+    <moveThreadCount>AUTO</moveThreadCount>
+
+</solver>
+

@@ -17,42 +17,31 @@ public class constraintsProvider implements ConstraintProvider {
     public Constraint[] defineConstraints(ConstraintFactory constraintFactory) {
         return new Constraint[]{
                 //hardConstraints (With these conflicts , It is very tough to schedule courses because there is only one room for one course at the time)
-                   roomConflict(constraintFactory) ,
-//               teacherConflict(constraintFactory),
-//               studentGroupConflict(constraintFactory),
-                timeRoomConflict(constraintFactory),
-           //   noOverLappingCourses(constraintFactory),
+                 roomConflict(constraintFactory) ,
+                teacherConflict(constraintFactory),
+               studentGroupConflict(constraintFactory),
+
+   //             noOverLappingCourses(constraintFactory),
 
 
                 //softConstraints (with this we can manage but it is good to not break it also )
-//                teacherRoomStability(constraintFactory),
-//              teacherTimeEfficiency(constraintFactory),
+              teacherRoomStability(constraintFactory),
+             teacherTimeEfficiency(constraintFactory),
                 studentGroupSubjectVariety(constraintFactory),
-              studentRoomStability(constraintFactory),
-             studentGroupTimeEfficiency(constraintFactory)
+              //studentRoomStability(constraintFactory),
+              studentGroupTimeEfficiency(constraintFactory)
         };
     }
-
-    private Constraint timeRoomConflict(ConstraintFactory constraintFactory) {
-        return constraintFactory
-                .fromUniquePair(Course.class ,
-                    Joiners.equal(Course::getTimeSlot)
-                         .and(Joiners.equal(Course::getRoom)))
-                            .penalize("TimeSlot coflict" , HardSoftScore.ONE_SOFT) ;
-    }
-
-//    private Constraint SameRoomSa(ConstraintFactory constraintFactory) {
-//        return constraintFactory
-//                .from(Course.class)
-//                .join(Course.class , Joiners.equal(Course::getRoom))
-//                .filter((course, course2) -> )
-//    }
 
 
     private Constraint roomConflict(ConstraintFactory constraintFactory) {
         return constraintFactory
+                //select the two different courses
                 .fromUniquePair(Course.class,
-                        Joiners.equal(Course::getRoom))
+                        //in the same timeSlot
+                        Joiners.equal(Course::getTimeSlot),
+                        //in the same room
+                            Joiners.equal(Course::getRoom))
                 .penalize("Room conflict", HardSoftScore.ONE_HARD);
     }
     private boolean roomStability(Course course1 , Course course2){
@@ -72,7 +61,7 @@ public class constraintsProvider implements ConstraintProvider {
     private Constraint noOverLappingCourses(ConstraintFactory constraintFactory) {
         return constraintFactory.forEachUniquePair(Course.class , Joiners.equal(Course::getTeacher))
                 .filter((course1, course2) -> getTimings(course1 , course2))
-                .penalize("Overlapped Courses Not Possible For One Teacher", HardSoftScore.ONE_HARD) ; 
+                .penalize("Overlapped Courses Not Possible For One Teacher", HardSoftScore.ONE_HARD) ;
     }
 
     private boolean getTimings(Course course1, Course course2) {
@@ -87,6 +76,7 @@ public class constraintsProvider implements ConstraintProvider {
     private Constraint studentGroupConflict(ConstraintFactory constraintFactory) {
         return constraintFactory
                 .fromUniquePair(Course.class,
+                Joiners.equal(Course::getTimeSlot),
                 Joiners.equal(Course::getStudentGroup))
                 .penalize("studentGroup conflict" , HardSoftScore.ONE_HARD);
     }
@@ -95,16 +85,10 @@ public class constraintsProvider implements ConstraintProvider {
     private Constraint teacherConflict(ConstraintFactory constraintFactory) {
        return constraintFactory
                 .fromUniquePair(Course.class,
+                Joiners.equal(Course::getTimeSlot),
                 Joiners.equal(Course::getTeacher))
                 .penalize("Teacher Conflict" , HardSoftScore.ONE_HARD) ;
     }
-
-//    private Constraint roomConflict(ConstraintFactory constraintFactory) {
-//        return constraintFactory
-//                .fromUniquePair(Course.class,
-//                        Joiners.equal(Course::getRoom))
-//                .penalize("Room conflict", HardSoftScore.ONE_HARD);
-//    }
 
 
     private Constraint studentGroupSubjectVariety(ConstraintFactory constraintFactory) {
@@ -156,5 +140,6 @@ public class constraintsProvider implements ConstraintProvider {
                 .penalize("StudentGroup Time Efficiency"  , HardSoftScore.ONE_SOFT) ;
 
     }
+
 
 }

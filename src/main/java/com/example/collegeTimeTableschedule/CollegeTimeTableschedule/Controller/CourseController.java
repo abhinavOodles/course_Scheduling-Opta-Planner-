@@ -31,7 +31,7 @@ public class CourseController {
         List<Course> courseList = courseRepo.findAll();
 
         for (Course course1 : courseList) {
-            System.out.println(course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime());
+            System.out.println(course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime()+" "+course1.getTeacher()+" "+course1.getTimeSlot().getDayOfWeek());
         }
         return "Check the console of IJ" ;
     }
