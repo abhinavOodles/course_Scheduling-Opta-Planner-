@@ -29,9 +29,11 @@ public class CourseController {
     public String inspectSolution() {
 
         List<Course> courseList = courseRepo.findAll();
+        int count = 1 ;
 
         for (Course course1 : courseList) {
-            System.out.println(course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime()+" "+course1.getTeacher()+" "+course1.getTimeSlot().getDayOfWeek());
+            System.out.println(count +"-> "+course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime()+" "+course1.getTeacher()+" "+course1.getTimeSlot().getDayOfWeek());
+            count++  ;
         }
         return "Check the console of IJ" ;
     }

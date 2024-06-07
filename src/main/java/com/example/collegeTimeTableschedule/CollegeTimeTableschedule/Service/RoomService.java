@@ -7,10 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RoomService {
+public class  RoomService {
+
     @Autowired
     private RoomRepo roomRepo ;
+
     public String save(RoomDTO roomDTO) {
+
         Room room = new Room() ;
         room.setRoomName(roomDTO.getName());
 

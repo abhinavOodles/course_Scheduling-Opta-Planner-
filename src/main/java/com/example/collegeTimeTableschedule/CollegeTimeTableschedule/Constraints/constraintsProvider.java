@@ -18,19 +18,36 @@ public class constraintsProvider implements ConstraintProvider {
         return new Constraint[]{
                 //hardConstraints (With these conflicts , It is very tough to schedule courses because there is only one room for one course at the time)
                  roomConflict(constraintFactory) ,
-                teacherConflict(constraintFactory),
+               teacherConflict(constraintFactory),
                studentGroupConflict(constraintFactory),
 
-   //             noOverLappingCourses(constraintFactory),
+                noOverLappingCourses(constraintFactory),
 
 
                 //softConstraints (with this we can manage but it is good to not break it also )
-              teacherRoomStability(constraintFactory),
-             teacherTimeEfficiency(constraintFactory),
+             teacherRoomStability(constraintFactory),
+            teacherTimeEfficiency(constraintFactory),
                 studentGroupSubjectVariety(constraintFactory),
-              //studentRoomStability(constraintFactory),
+              studentRoomStability(constraintFactory),
               studentGroupTimeEfficiency(constraintFactory)
+
+
         };
+    }
+    private boolean roomStability(Course course1 , Course course2){
+        Room room1 = course1.getRoom() ;
+        Room room2 = course2.getRoom() ;
+
+        return room1 != room2;
+    }
+
+    private boolean getTimings(Course course1, Course course2) {
+
+        LocalTime endTimeCourse1 = course1.getTimeSlot().getEndTime();
+        LocalTime startTimeCourse2 = course2.getTimeSlot().getStartTime();
+        long betweenMinutes = Duration.between(endTimeCourse1, startTimeCourse2).toMinutes();
+
+        return betweenMinutes >= 0 ;
     }
 
 
@@ -44,12 +61,7 @@ public class constraintsProvider implements ConstraintProvider {
                             Joiners.equal(Course::getRoom))
                 .penalize("Room conflict", HardSoftScore.ONE_HARD);
     }
-    private boolean roomStability(Course course1 , Course course2){
-        Room room1 = course1.getRoom() ;
-        Room room2 = course2.getRoom() ;
 
-        return room1 == room2;
-    }
 
     private Constraint studentRoomStability(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Course.class)
@@ -59,19 +71,12 @@ public class constraintsProvider implements ConstraintProvider {
     }
 
     private Constraint noOverLappingCourses(ConstraintFactory constraintFactory) {
-        return constraintFactory.forEachUniquePair(Course.class , Joiners.equal(Course::getTeacher))
+        return constraintFactory.forEachUniquePair(Course.class ,
+                        Joiners.equal(Course::getTeacher))
                 .filter((course1, course2) -> getTimings(course1 , course2))
                 .penalize("Overlapped Courses Not Possible For One Teacher", HardSoftScore.ONE_HARD) ;
     }
 
-    private boolean getTimings(Course course1, Course course2) {
-
-        LocalTime endTimeCourse1 = course1.getTimeSlot().getEndTime();
-        LocalTime startTimeCourse2 = course2.getTimeSlot().getStartTime();
-        long betweenMinutes = Duration.between(endTimeCourse1, startTimeCourse2).toMinutes();
-
-        return betweenMinutes >= 0 ;
-    }
 
     private Constraint studentGroupConflict(ConstraintFactory constraintFactory) {
         return constraintFactory
@@ -102,7 +107,7 @@ public class constraintsProvider implements ConstraintProvider {
                   .filter((course1 , course2) -> {
                 Duration between = Duration.between(course1.getTimeSlot().getEndTime(),
                         (course2.getTimeSlot().getStartTime()) );
-                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0;
+                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(20)) <= 0;
                 })
                 .penalize("studentGroup Subject Conflict",HardSoftScore.ONE_SOFT) ;
     }
