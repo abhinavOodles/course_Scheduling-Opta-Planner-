@@ -2,6 +2,7 @@ package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Constraint
 
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Course;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Room;
+import org.optaplanner.core.api.score.buildin.hardmediumsoftbigdecimal.HardMediumSoftBigDecimalScore;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.stream.Constraint;
 import org.optaplanner.core.api.score.stream.ConstraintFactory;
@@ -16,24 +17,26 @@ public class constraintsProvider implements ConstraintProvider {
     @Override
     public Constraint[] defineConstraints(ConstraintFactory constraintFactory) {
         return new Constraint[]{
-                //hardConstraints (With these conflicts , It is very tough to schedule courses because there is only one room for one course at the time)
-                 roomConflict(constraintFactory) ,
+          //hardConstraints (With these conflicts , It is very tough to schedule courses because there is only one room for one course at the time)
+               roomConflict(constraintFactory) ,
                teacherConflict(constraintFactory),
                studentGroupConflict(constraintFactory),
+               noOverLappingCourses(constraintFactory),
 
-                noOverLappingCourses(constraintFactory),
 
-
-                //softConstraints (with this we can manage but it is good to not break it also )
-             teacherRoomStability(constraintFactory),
+           //softConstraints (with this we can manage but it is good to not break it also )
+            teacherRoomStability(constraintFactory),
             teacherTimeEfficiency(constraintFactory),
-                studentGroupSubjectVariety(constraintFactory),
-              studentRoomStability(constraintFactory),
-              studentGroupTimeEfficiency(constraintFactory)
+            studentGroupSubjectVariety(constraintFactory),
+            studentRoomStability(constraintFactory),
+            studentGroupTimeEfficiency(constraintFactory),
+                OneRoomOneStudentGroup(constraintFactory)
 
 
         };
     }
+
+
     private boolean roomStability(Course course1 , Course course2){
         Room room1 = course1.getRoom() ;
         Room room2 = course2.getRoom() ;
@@ -64,10 +67,34 @@ public class constraintsProvider implements ConstraintProvider {
 
 
     private Constraint studentRoomStability(ConstraintFactory constraintFactory) {
-        return constraintFactory.from(Course.class)
+        return constraintFactory
+                .from(Course.class)
                 .join(Course.class , Joiners.equal(Course::getStudentGroup))
                 .filter((course1, course2) -> roomStability(course1,course2))
                 .penalize("Room Not Stable" , HardSoftScore.ONE_SOFT);
+    }
+
+    private Constraint OneRoomOneStudentGroup(ConstraintFactory constraintFactory) {
+        return constraintFactory
+                .from(Course.class)
+                .join(Course.class ,Joiners.equal(Course::getStudentGroup))
+                .filter((course1,course2) -> checkForRoom(course1,course2))
+                .penalize("Room Of Student Group is not stable" , HardSoftScore.ONE_SOFT);
+
+    }
+
+    private boolean checkForRoom(Course course1, Course course2) {
+        if(course1.getRoom() ==course2.getRoom()){
+            if (course1.getStudentGroup()==course2.getStudentGroup()){
+                if(course1.getTimeSlot()!=course2.getTimeSlot()){
+                    return false;
+                }
+            }
+        }
+
+        // penality given
+             return true ;
+
     }
 
     private Constraint noOverLappingCourses(ConstraintFactory constraintFactory) {
@@ -118,7 +145,7 @@ public class constraintsProvider implements ConstraintProvider {
                 .from(Course.class)
                 .join(Course.class,
                         Joiners.equal(Course::getTeacher),
-                          Joiners.equal((course) -> course.getTimeSlot().getDayOfWeek()))
+                          Joiners.equal((course) -> course.getTimeSlot()))
                 .filter((course1 , course2) -> getTimings(course1,course2))
                 .penalize("Teacher Time Efficiency"  , HardSoftScore.ONE_SOFT) ;
 
@@ -140,7 +167,7 @@ public class constraintsProvider implements ConstraintProvider {
                 .join(Course.class,
                         Joiners.equal(Course::getStudentGroup),
                         //ensures that the courses being considered belong to the same student group and are scheduled on the same day of the week.
-                        Joiners.equal((course) -> course.getTimeSlot().getDayOfWeek()))
+                        Joiners.equal((course) -> course.getTimeSlot()))
                 .filter((course1 , course2) -> getTimings(course1,course2))
                 .penalize("StudentGroup Time Efficiency"  , HardSoftScore.ONE_SOFT) ;
 
