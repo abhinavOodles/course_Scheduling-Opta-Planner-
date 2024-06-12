@@ -92,7 +92,7 @@ public class constraintsProvider implements ConstraintProvider {
             }
         }
 
-        // penality given
+        // penality given and give one soft score
              return true ;
 
     }
