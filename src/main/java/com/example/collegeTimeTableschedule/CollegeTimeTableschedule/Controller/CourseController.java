@@ -32,7 +32,7 @@ public class CourseController {
         int count = 1 ;
 
         for (Course course1 : courseList) {
-            System.out.println(count +"-> "+course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime()+" "+course1.getTeacher()+" "+course1.getTimeSlot().getDayOfWeek());
+            System.out.println(count +"-> "+course1.getId() +" "+ course1.getRoom() +" "+course1.getTimeSlot().getStartTime()+" "+course1.getTeacher()+" "+course1.getTimeSlot().getDayOfWeek()+" "+course1.getStudentGroup());
             count++  ;
         }
         return "Check the console of IJ" ;

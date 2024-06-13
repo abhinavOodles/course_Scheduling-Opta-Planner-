@@ -21,7 +21,8 @@ public class constraintsProvider implements ConstraintProvider {
                roomConflict(constraintFactory) ,
                teacherConflict(constraintFactory),
                studentGroupConflict(constraintFactory),
-               noOverLappingCourses(constraintFactory),
+             //  noOverLappingCourses(constraintFactory),
+                // allocateCourseToCorrectStudentGroup(constraintFactory),
 
 
            //softConstraints (with this we can manage but it is good to not break it also )
@@ -29,15 +30,11 @@ public class constraintsProvider implements ConstraintProvider {
             teacherTimeEfficiency(constraintFactory),
             studentGroupSubjectVariety(constraintFactory),
             studentRoomStability(constraintFactory),
-            studentGroupTimeEfficiency(constraintFactory),
-            OneRoomOneStudentGroup(constraintFactory)
+            studentGroupTimeEfficiency(constraintFactory)
 
 
         };
     }
-
-
-
 
 
     private boolean roomStability(Course course1 , Course course2){
@@ -77,18 +74,12 @@ public class constraintsProvider implements ConstraintProvider {
                 .penalize("Room Not Stable" , HardSoftScore.ONE_SOFT);
     }
 
-    private Constraint OneRoomOneStudentGroup(ConstraintFactory constraintFactory) {
-        return constraintFactory
-                .from(Course.class)
-                .join(Course.class ,Joiners.equal(Course::getStudentGroup))
-                .filter((course1,course2) -> checkForRoom(course1,course2))
-                .penalize("Room Of Student Group is not stable" , HardSoftScore.ONE_SOFT);
 
-    }
+
 
     private boolean checkForRoom(Course course1, Course course2) {
         if(course1.getRoom() ==course2.getRoom()){
-            if (course1.getStudentGroup()==course2.getStudentGroup()){
+            if (course1.getStudentGroup() == course2.getStudentGroup()){
                 if(course1.getTimeSlot()!=course2.getTimeSlot()){
                     return false;
                 }
@@ -108,12 +99,13 @@ public class constraintsProvider implements ConstraintProvider {
     }
 
 
-    private Constraint studentGroupConflict(ConstraintFactory constraintFactory) {
+    Constraint studentGroupConflict(ConstraintFactory constraintFactory) {
+
         return constraintFactory
                 .fromUniquePair(Course.class,
-                Joiners.equal(Course::getTimeSlot),
-                Joiners.equal(Course::getStudentGroup))
-                .penalize("studentGroup conflict" , HardSoftScore.ONE_HARD);
+                        Joiners.equal(Course::getTimeSlot),
+                        Joiners.equal(Course::getStudentGroup))
+                .penalize("Student group conflict", HardSoftScore.ONE_HARD);
     }
 
 
@@ -131,15 +123,15 @@ public class constraintsProvider implements ConstraintProvider {
         return  constraintFactory
                 .from(Course.class)
                 .join(Course.class,
-                     Joiners.equal(Course::getSubject),
+                        Joiners.equal(Course::getSubject),
                         Joiners.equal(Course::getStudentGroup),
-                 Joiners.equal((course) -> course.getTimeSlot().getDayOfWeek()))
-                  .filter((course1 , course2) -> {
-                Duration between = Duration.between(course1.getTimeSlot().getEndTime(),
-                        (course2.getTimeSlot().getStartTime()) );
-                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(20)) <= 0;
+                        Joiners.equal((lesson) -> lesson.getTimeSlot().getDayOfWeek()))
+                .filter((lesson1, lesson2) -> {
+                    Duration between = Duration.between(lesson1.getTimeSlot().getEndTime(),
+                            lesson2.getTimeSlot().getStartTime());
+                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0;
                 })
-                .penalize("studentGroup Subject Conflict",HardSoftScore.ONE_SOFT) ;
+                .penalize("Student group subject variety", HardSoftScore.ONE_SOFT);
     }
 
    private Constraint teacherTimeEfficiency(ConstraintFactory constraintFactory) {

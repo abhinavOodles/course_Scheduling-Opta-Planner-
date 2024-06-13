@@ -7,12 +7,10 @@ import org.optaplanner.core.api.solver.SolutionManager;
 import org.optaplanner.core.api.solver.SolverManager;
 import org.optaplanner.core.api.solver.SolverStatus;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
+
 
 @RestController
 @RequestMapping("/timetable")
@@ -47,6 +45,18 @@ public class TimeTableController {
         solverManager.solveAndListen(SolverService.Time_Table_Id,
                 service::findById,
                 service::save) ;
+    }
+
+
+    @PostMapping("/solve1")
+    public ResponseEntity<TimeTable> solveTimeTable() {
+        try {
+            TimeTable initialTimeTable = service.findById(SolverService.Time_Table_Id);
+            TimeTable solvedTimeTable = service.solveTimeTable(initialTimeTable);
+            return ResponseEntity.ok().body(solvedTimeTable);
+        } catch (IllegalStateException e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping("/stopSolving")
