@@ -21,7 +21,7 @@ public class constraintsProvider implements ConstraintProvider {
                roomConflict(constraintFactory) ,
                teacherConflict(constraintFactory),
                studentGroupConflict(constraintFactory),
-             //  noOverLappingCourses(constraintFactory),
+                noOverLappingCourses(constraintFactory),
                 // allocateCourseToCorrectStudentGroup(constraintFactory),
 
 
@@ -105,7 +105,7 @@ public class constraintsProvider implements ConstraintProvider {
                 .fromUniquePair(Course.class,
                         Joiners.equal(Course::getTimeSlot),
                         Joiners.equal(Course::getStudentGroup))
-                .penalize("Student group conflict", HardSoftScore.ONE_HARD);
+                .penalize("Student Group Conflict", HardSoftScore.ONE_HARD);
     }
 
 
@@ -125,10 +125,10 @@ public class constraintsProvider implements ConstraintProvider {
                 .join(Course.class,
                         Joiners.equal(Course::getSubject),
                         Joiners.equal(Course::getStudentGroup),
-                        Joiners.equal((lesson) -> lesson.getTimeSlot().getDayOfWeek()))
-                .filter((lesson1, lesson2) -> {
-                    Duration between = Duration.between(lesson1.getTimeSlot().getEndTime(),
-                            lesson2.getTimeSlot().getStartTime());
+                        Joiners.equal((course) -> course.getTimeSlot().getDayOfWeek()))
+                .filter((course1, course2) -> {
+                    Duration between = Duration.between(course1.getTimeSlot().getEndTime(),
+                            course2.getTimeSlot().getStartTime());
                     return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0;
                 })
                 .penalize("Student group subject variety", HardSoftScore.ONE_SOFT);

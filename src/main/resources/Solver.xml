@@ -7,7 +7,7 @@
     <scoreDirectorFactory>
         <constraintProviderClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Constraints.constraintsProvider
         </constraintProviderClass>
-        <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+        <initializingScoreTrend>ONLY_UP</initializingScoreTrend>
     </scoreDirectorFactory>
     <constructionHeuristic>
         <changeMoveSelector/>

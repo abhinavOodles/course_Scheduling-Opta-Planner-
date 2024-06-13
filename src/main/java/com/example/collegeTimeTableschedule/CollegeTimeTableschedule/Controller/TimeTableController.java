@@ -48,16 +48,16 @@ public class TimeTableController {
     }
 
 
-    @PostMapping("/solve1")
-    public ResponseEntity<TimeTable> solveTimeTable() {
-        try {
-            TimeTable initialTimeTable = service.findById(SolverService.Time_Table_Id);
-            TimeTable solvedTimeTable = service.solveTimeTable(initialTimeTable);
-            return ResponseEntity.ok().body(solvedTimeTable);
-        } catch (IllegalStateException e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    @PostMapping("/solve1")
+//    public ResponseEntity<TimeTable> solveTimeTable() {
+//        try {
+//            TimeTable initialTimeTable = service.findById(SolverService.Time_Table_Id);
+//            TimeTable solvedTimeTable = service.solveTimeTable(initialTimeTable);
+//            return ResponseEntity.ok().body(solvedTimeTable);
+//        } catch (IllegalStateException e) {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
     @PostMapping("/stopSolving")
     public void stopSolving() {
