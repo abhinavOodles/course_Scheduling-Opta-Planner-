@@ -94,4 +94,6 @@ public class Course {
     public void setTimeSlot(TimeSlot timeSlot) {
         this.timeSlot = timeSlot;
     }
+
+
 }

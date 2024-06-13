@@ -30,11 +30,14 @@ public class constraintsProvider implements ConstraintProvider {
             studentGroupSubjectVariety(constraintFactory),
             studentRoomStability(constraintFactory),
             studentGroupTimeEfficiency(constraintFactory),
-                OneRoomOneStudentGroup(constraintFactory)
+            OneRoomOneStudentGroup(constraintFactory)
 
 
         };
     }
+
+
+
 
 
     private boolean roomStability(Course course1 , Course course2){
