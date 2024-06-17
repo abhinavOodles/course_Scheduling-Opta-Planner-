@@ -36,6 +36,8 @@
 			</dependency>
 
 		</dependencies>
+
+<!--		Dependency management is the process of managing all of these interrelated tasks and resources to ensure that your overall project completes successfully, on time.-->
 	</dependencyManagement>
 
 	<dependencies>

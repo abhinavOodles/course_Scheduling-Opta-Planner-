@@ -12,7 +12,6 @@ import org.optaplanner.core.api.score.ScoreExplanation;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.constraint.ConstraintMatch;
 import org.optaplanner.core.api.score.constraint.Indictment;
-import org.optaplanner.core.api.score.stream.Joiners;
 import org.optaplanner.core.api.solver.*;
 import org.optaplanner.core.config.solver.SolverConfig;
 import org.optaplanner.core.config.solver.SolverManagerConfig;
@@ -22,9 +21,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
-import java.util.stream.Collectors;
+
 
 @Slf4j
 @Service
@@ -46,6 +43,7 @@ public class SolverService {
     private RoomRepo roomRepo;
     @Autowired
     private CourseRepo courseRepo;
+
 
     SolverService() {
      SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
@@ -134,9 +132,6 @@ public class SolverService {
             timeTable.setRoomList(rooms);
             timeTable.setTimeslotList(timeSlots);
 
-
-
-     // String jobId  = UUID.randomUUID().toString() ;
             SolverJob<TimeTable, Long> solverJob = solverManager.solve(1l, timeTable);
             TimeTable solution;
             try {
@@ -164,10 +159,14 @@ public class SolverService {
             for (ConstraintMatch<HardSoftScore> constraintMatch : indictment.getConstraintMatchSet()) {
                 String constraintName = constraintMatch.getConstraintName();
                 HardSoftScore score = constraintMatch.getScore();
-                log.info("CourseId::::::::::{},Constraint name ::::::{},:::::::socre{}",process.getId(), constraintName,score);
+                log.info("CourseId: {}, Constraint name: {}, Score: {}", process.getId(), constraintName, score);
             }
         }
 
-            return solution.getCourseList();
+        log.info("Returning solution course list: {}", solution.getCourseList());
+        return solution.getCourseList();
     }
-}
+
+
+    }
+
