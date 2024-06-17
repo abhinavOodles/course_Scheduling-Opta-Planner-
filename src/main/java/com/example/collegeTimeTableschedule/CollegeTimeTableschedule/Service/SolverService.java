@@ -7,8 +7,11 @@ import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Time
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.CourseRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.RoomRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.TimeSlotRepo;
+import lombok.extern.slf4j.Slf4j;
 import org.optaplanner.core.api.score.ScoreExplanation;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.score.constraint.ConstraintMatch;
+import org.optaplanner.core.api.score.constraint.Indictment;
 import org.optaplanner.core.api.score.stream.Joiners;
 import org.optaplanner.core.api.solver.*;
 import org.optaplanner.core.config.solver.SolverConfig;
@@ -18,10 +21,12 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import java.util.stream.Collectors;
 
-
+@Slf4j
 @Service
 @Transactional
 public class SolverService {
@@ -116,10 +121,12 @@ public class SolverService {
 //    }
 
 
+
+
     public List<Course> solverConfig(){
         TimeTable timeTable = new TimeTable() ;
 
-        List<Course> courseList = courseRepo.findAll();
+            List<Course> courseList = courseRepo.findAll();
             List<Room> rooms = roomRepo.findAll();
             List<TimeSlot> timeSlots = timeslotRepository.findAll();
 
@@ -143,6 +150,23 @@ public class SolverService {
 
 
             ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = solutionManager.explain(solution);
+
+
+        Map<Object, Indictment<HardSoftScore>> indictmentMap = scoreExplanation.getIndictmentMap();
+        for (Course process : solution.getCourseList()) {
+            Indictment<HardSoftScore> indictment = indictmentMap.get(process);
+            if (indictment == null) {
+                continue;
+            }
+
+            HardSoftScore totalScore  = indictment.getScore();
+
+            for (ConstraintMatch<HardSoftScore> constraintMatch : indictment.getConstraintMatchSet()) {
+                String constraintName = constraintMatch.getConstraintName();
+                HardSoftScore score = constraintMatch.getScore();
+                log.info("CourseId::::::::::{},Constraint name ::::::{},:::::::socre{}",process.getId(), constraintName,score);
+            }
+        }
 
             return solution.getCourseList();
     }

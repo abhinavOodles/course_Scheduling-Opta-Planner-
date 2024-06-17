@@ -2,7 +2,6 @@ package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Service;
 
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DTOS.CourseDTO;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Course;
-import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.TimeTable;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.CourseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
