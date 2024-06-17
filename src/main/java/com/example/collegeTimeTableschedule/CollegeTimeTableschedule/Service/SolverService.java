@@ -7,7 +7,9 @@ import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Time
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.CourseRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.RoomRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.TimeSlotRepo;
+import org.optaplanner.core.api.score.ScoreExplanation;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
+import org.optaplanner.core.api.score.stream.Joiners;
 import org.optaplanner.core.api.solver.*;
 import org.optaplanner.core.config.solver.SolverConfig;
 import org.optaplanner.core.config.solver.SolverManagerConfig;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 
@@ -39,19 +42,26 @@ public class SolverService {
     @Autowired
     private CourseRepo courseRepo;
 
+    SolverService() {
+     SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
+            this.solverManager  = SolverManager.create(solver,new SolverManagerConfig());
+        SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
+        this.solutionManager = SolutionManager.create(solverFactory);
+   }
 
-    public TimeTable findById(Long id) {
+//    public TimeTable findById(Long id) {
+//
+//        TimeTable timeTable = new TimeTable();
+//
+//        if (!(Time_Table_Id.equals(id))) {
+//            throw new IllegalArgumentException("Wrong Id ->" + id);
+//    } else {
+//            return  new TimeTable(
+//                    courseRepo.findAll(),
+//                    roomRepo.findAll(),
+//                    timeslotRepository.findAll()
+//            );
 
-        TimeTable timeTable = new TimeTable();
-
-        if (!(Time_Table_Id.equals(id))) {
-            throw new IllegalArgumentException("Wrong Id ->" + id);
-     } else {
-            return  new TimeTable(
-                    courseRepo.findAll(),
-                    roomRepo.findAll(),
-                    timeslotRepository.findAll()
-            );
 //            List<Course> courseList = courseRepo.findAll();
 //            List<Room> rooms = roomRepo.findAll();
 //            List<TimeSlot> timeSlots = timeslotRepository.findAll();
@@ -60,41 +70,80 @@ public class SolverService {
 //            timeTable.setRoomList(rooms);
 //            timeTable.setTimeslotList(timeSlots);
 //
+//            Long jobId = 1l;
 //
-//                SolverJob<TimeTable, Long> solverJob = solverManager.solve(Time_Table_Id, timeTable);
-//                TimeTable solution;
 //
-//                try {
-//                    solution = solverJob.getFinalBestSolution();
-//                } catch (Exception e) {
-//                    throw new RuntimeException(e);
-//                }
-//                return solution;
+//            SolverJob<TimeTable, Long> solverJob = solverManager.solve(jobId, timeTable);
+//            TimeTable solution;
+//            try {
+//                // Returns only after solving terminates
+//                solution = solverJob.getFinalBestSolution();
+//            } catch (InterruptedException e) {
+//                throw new RuntimeException(e);
+//            } catch (Exception e) {
+//                throw new RuntimeException(e);
+//            }
+//
+//
+//            ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = solutionManager.explain(solution);
+//            return timeTable ;
+      //  }
 
-        }
-}
-        public void save(TimeTable timeTable) {
-            for (Course course : timeTable.getCourseList()) {
-                courseRepo.save(course);
-            }
-        }
-//    SolverService() {
-    private SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
-//        this.solverManager  = SolverManager.create(solver,new SolverManagerConfig());
+        //}
+
+//        public void save(TimeTable timeTable) {
+//            for (Course course : timeTable.getCourseList()) {
+//                courseRepo.save(course);
+//            }
+        //}
+////    SolverService() {
+//    private SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
+////        this.solverManager  = SolverManager.create(solver,new SolverManagerConfig());
+////        SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
+////        this.solutionManager = SolutionManager.create(solverFactory);
+////    }
+//    public TimeTable solveTimeTable(TimeTable timeTable) {
 //        SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
-//        this.solutionManager = SolutionManager.create(solverFactory);
+//        Solver<TimeTable> solver = solverFactory.buildSolver();
+//        SolverJob<TimeTable, Long> solverJob = solverManager.solve(Time_Table_Id, timeTable);
+//        try {
+//            return solverJob.getFinalBestSolution();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException("Solver job interrupted", e);
+//        } catch (ExecutionException e) {
+//            throw new RuntimeException(e);
+//        }
 //    }
-    public TimeTable solveTimeTable(TimeTable timeTable) {
-        SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
-        Solver<TimeTable> solver = solverFactory.buildSolver();
-        SolverJob<TimeTable, Long> solverJob = solverManager.solve(Time_Table_Id, timeTable);
-        try {
-            return solverJob.getFinalBestSolution();
-        } catch (InterruptedException e) {
-            throw new RuntimeException("Solver job interrupted", e);
-        } catch (ExecutionException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
+
+    public List<Course> solverConfig(){
+        TimeTable timeTable = new TimeTable() ;
+
+        List<Course> courseList = courseRepo.findAll();
+            List<Room> rooms = roomRepo.findAll();
+            List<TimeSlot> timeSlots = timeslotRepository.findAll();
+
+            timeTable.setCourseList(courseList);
+            timeTable.setRoomList(rooms);
+            timeTable.setTimeslotList(timeSlots);
+
+
+
+     // String jobId  = UUID.randomUUID().toString() ;
+            SolverJob<TimeTable, Long> solverJob = solverManager.solve(1l, timeTable);
+            TimeTable solution;
+            try {
+                // Returns only after solving terminates
+                solution = solverJob.getFinalBestSolution();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+
+            ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = solutionManager.explain(solution);
+
+            return solution.getCourseList();
+    }
 }
