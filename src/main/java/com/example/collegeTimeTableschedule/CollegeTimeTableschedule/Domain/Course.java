@@ -29,6 +29,10 @@ public class Course {
     @ManyToOne
     private Room room ;
 
+    @Override
+    public String toString() {
+        return subject + "(" + id + ")";
+    }
     public Course() {
     }
 

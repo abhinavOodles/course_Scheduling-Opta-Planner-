@@ -19,6 +19,11 @@ public class TimeSlot {
     private LocalTime startTime;
     private LocalTime endTime;
 
+    @Override
+    public String toString() {
+        return dayOfWeek + " " + startTime;
+    }
+
     public TimeSlot(DayOfWeek dayOfWeek, LocalTime startTime, LocalTime endTime) {
         this.dayOfWeek = dayOfWeek;
         this.startTime = startTime;

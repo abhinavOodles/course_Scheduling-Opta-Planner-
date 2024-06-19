@@ -28,21 +28,21 @@ public class CourseService {
 
     }
 
-    public void updateRoom() {
-        List<Course> courseList = courseRepo.findAll() ;
-
-        for (Course course : courseList) {
-
-            if (course.getRoom() != null || course.getTimeSlot() != null) {
-                course.setRoom(null);
-                course.setTimeSlot(null);
-                courseRepo.save(course);
-            }
-        }
+//    public void updateRoom() {
+//        List<Course> courseList = courseRepo.findAll() ;
+//
+//        for (Course course : courseList) {
+//
+//            if (course.getRoom() != null || course.getTimeSlot() != null) {
+//                course.setRoom(null);
+//                course.setTimeSlot(null);
+//                courseRepo.save(course);
+//            }
+//        }
     }
 
 
-    }
+
 
 
 

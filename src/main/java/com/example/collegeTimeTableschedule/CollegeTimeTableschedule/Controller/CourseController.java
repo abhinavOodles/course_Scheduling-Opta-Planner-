@@ -37,9 +37,4 @@ public class CourseController {
         }
         return "Check the console of IJ" ;
     }
-
-    @PutMapping("/")
-    private void changeDatam(){
-        courseService.updateRoom();
-    }
 }

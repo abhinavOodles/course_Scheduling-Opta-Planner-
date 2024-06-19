@@ -1,20 +1,32 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
+import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class Room {
 
     @PlanningId
     @Id
     @GeneratedValue
-    private int id ;
+    private int id;
 
-    private String roomName ;
+    private String roomName;
+
+    @Transient
+    @InverseRelationShadowVariable(sourceVariableName = "room")
+    private Set<Course> courses = new HashSet<>();
 
     @Override
     public String toString() {
@@ -32,19 +44,4 @@ public class Room {
         this.roomName = roomName;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getRoomName() {
-        return roomName;
-    }
-
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
 }

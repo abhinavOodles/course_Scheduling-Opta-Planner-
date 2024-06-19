@@ -35,10 +35,7 @@ public class TimeTableController {
 //        return solution;
 //    }
 //
-//    private SolverStatus getSolverStatus() {
-//        return solverManager.getSolverStatus(SolverService.Time_Table_Id);
-//
-//    }
+
 
 //    @PostMapping("/solve")
 //    public void solve(){
@@ -52,6 +49,10 @@ public class TimeTableController {
         return ResponseEntity.ok(service.solverConfig());
     }
 
+    public SolverStatus getSolverStatus() {
+        return solverManager.getSolverStatus(SolverService.Time_Table_Id);
+
+    }
 //    @PostMapping("/solve1")
 //    public ResponseEntity<TimeTable> solveTimeTable() {
 //        try {

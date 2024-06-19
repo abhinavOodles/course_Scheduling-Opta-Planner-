@@ -2,7 +2,6 @@ package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Constraint
 
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Course;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Room;
-import org.optaplanner.core.api.score.buildin.hardmediumsoftbigdecimal.HardMediumSoftBigDecimalScore;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.stream.Constraint;
 import org.optaplanner.core.api.score.stream.ConstraintFactory;
@@ -18,19 +17,19 @@ public class constraintsProvider implements ConstraintProvider {
     public Constraint[] defineConstraints(ConstraintFactory constraintFactory) {
         return new Constraint[]{
           //hardConstraints (With these conflicts , It is very tough to schedule courses because there is only one room for one course at the time)
-               roomConflict(constraintFactory) ,
-               teacherConflict(constraintFactory),
-               studentGroupConflict(constraintFactory),
-                noOverLappingCourses(constraintFactory),
-                // allocateCourseToCorrectStudentGroup(constraintFactory),
+              roomConflict(constraintFactory) ,
+                  teacherConflict(constraintFactory),
+            studentGroupConflict(constraintFactory),
+               // noOverLappingCourses(constraintFactory),
+
 
 
            //softConstraints (with this we can manage but it is good to not break it also )
-            teacherRoomStability(constraintFactory),
-            teacherTimeEfficiency(constraintFactory),
-            studentGroupSubjectVariety(constraintFactory),
-            studentRoomStability(constraintFactory),
-            studentGroupTimeEfficiency(constraintFactory)
+           teacherRoomStability(constraintFactory),
+           teacherTimeEfficiency(constraintFactory),
+          studentGroupSubjectVariety(constraintFactory),
+           //studentRoomStability(constraintFactory),
+                // //studentGroupTimeEfficiency(constraintFactory)
 
 
         };
@@ -91,12 +90,12 @@ public class constraintsProvider implements ConstraintProvider {
 
     }
 
-    private Constraint noOverLappingCourses(ConstraintFactory constraintFactory) {
-        return constraintFactory.forEachUniquePair(Course.class ,
-                        Joiners.equal(Course::getTeacher))
-                .filter((course1, course2) -> getTimings(course1 , course2))
-                .penalize("Overlapped Courses Not Possible For One Teacher", HardSoftScore.ONE_HARD) ;
-    }
+//    private Constraint noOverLappingCourses(ConstraintFactory constraintFactory) {
+//        return constraintFactory.forEachUniquePair(Course.class ,
+//                        Joiners.equal(Course::getTeacher))
+//                .filter((course1, course2) -> getTimings(course1 , course2))
+//                .penalize("Overlapped Courses Not Possible For One Teacher", HardSoftScore.ONE_HARD) ;
+//    }
 
 
     Constraint studentGroupConflict(ConstraintFactory constraintFactory) {
@@ -118,9 +117,25 @@ public class constraintsProvider implements ConstraintProvider {
     }
 
 
-    private Constraint studentGroupSubjectVariety(ConstraintFactory constraintFactory) {
-        /* student dislikes continuity of  same course without any gap*/
-        return  constraintFactory
+//    private Constraint studentGroupSubjectVariety(ConstraintFactory constraintFactory) {
+//        /* student dislikes continuity of  same course without any gap*/
+//        return  constraintFactory
+//                .from(Course.class)
+//                .join(Course.class,
+//                        Joiners.equal(Course::getSubject),
+//                        Joiners.equal(Course::getStudentGroup),
+//                        Joiners.equal((course) -> course.getTimeSlot().getDayOfWeek()))
+//                .filter((course1, course2) -> {
+//                    Duration between = Duration.between(course1.getTimeSlot().getEndTime(),
+//                            course2.getTimeSlot().getStartTime());
+//                    return !between.isNegative() && between.compareTo(Duration.ofMinutes(30)) <= 0;
+//                })
+//                .penalize("Student group subject variety", HardSoftScore.ONE_SOFT);
+//    }
+
+    Constraint studentGroupSubjectVariety(ConstraintFactory constraintFactory) {
+        // A student group dislikes sequential lessons on the same subject.
+        return constraintFactory
                 .from(Course.class)
                 .join(Course.class,
                         Joiners.equal(Course::getSubject),
@@ -134,7 +149,8 @@ public class constraintsProvider implements ConstraintProvider {
                 .penalize("Student group subject variety", HardSoftScore.ONE_SOFT);
     }
 
-   private Constraint teacherTimeEfficiency(ConstraintFactory constraintFactory) {
+
+    private Constraint teacherTimeEfficiency(ConstraintFactory constraintFactory) {
 
         return constraintFactory
                 .from(Course.class)

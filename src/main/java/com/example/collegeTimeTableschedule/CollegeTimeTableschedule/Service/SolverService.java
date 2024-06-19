@@ -47,10 +47,55 @@ public class SolverService {
 
     SolverService() {
      SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
-            this.solverManager  = SolverManager.create(solver,new SolverManagerConfig());
+            this.solverManager  = SolverManager.create(solver, new SolverManagerConfig());
         SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
         this.solutionManager = SolutionManager.create(solverFactory);
-   }
+    }
+
+    public List<Course> solverConfig(){
+        TimeTable timeTable = new TimeTable() ;
+
+        List<Course> courseList = courseRepo.findAll();
+        List<Room> rooms = roomRepo.findAll();
+        List<TimeSlot> timeSlots = timeslotRepository.findAll();
+
+        timeTable.setCourseList(courseList);
+        timeTable.setRoomList(rooms);
+        timeTable.setTimeslotList(timeSlots);
+
+        log.info("Solving started:: ");
+        SolverJob<TimeTable, Long> solverJob = solverManager.solve(1l, timeTable);
+        TimeTable solution;
+        try {
+            // Returns only after solving terminates
+            solution = solverJob.getFinalBestSolution();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+        ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = solutionManager.explain(solution);
+        Map<Object, Indictment<HardSoftScore>> indictmentMap = scoreExplanation.getIndictmentMap();
+
+        for (Course process : solution.getCourseList()) {
+            Indictment<HardSoftScore> indictment = indictmentMap.get(process);
+            if (indictment == null) {
+                continue;
+            }
+            // The score impact of that planning entity
+            HardSoftScore totalScore = indictment.getScore();
+
+            for (ConstraintMatch<HardSoftScore> constraintMatch : indictment.getConstraintMatchSet()) {
+                String constraintName = constraintMatch.getConstraintName();
+                HardSoftScore score = constraintMatch.getScore();
+                log.info("CourseId::::::::::{},Constraint name ::::::{},:::::::socre{}",process.getId(), constraintName,score);
+            }
+        }
+
+      return solution.getCourseList() ;
+    }
 
 //    public TimeTable findById(Long id) {
 //
@@ -118,54 +163,6 @@ public class SolverService {
 //        }
 //    }
 
-
-
-
-    public List<Course> solverConfig(){
-        TimeTable timeTable = new TimeTable() ;
-
-            List<Course> courseList = courseRepo.findAll();
-            List<Room> rooms = roomRepo.findAll();
-            List<TimeSlot> timeSlots = timeslotRepository.findAll();
-
-            timeTable.setCourseList(courseList);
-            timeTable.setRoomList(rooms);
-            timeTable.setTimeslotList(timeSlots);
-
-            SolverJob<TimeTable, Long> solverJob = solverManager.solve(1l, timeTable);
-            TimeTable solution;
-            try {
-                // Returns only after solving terminates
-                solution = solverJob.getFinalBestSolution();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-
-
-            ScoreExplanation<TimeTable, HardSoftScore> scoreExplanation = solutionManager.explain(solution);
-
-
-        Map<Object, Indictment<HardSoftScore>> indictmentMap = scoreExplanation.getIndictmentMap();
-        for (Course process : solution.getCourseList()) {
-            Indictment<HardSoftScore> indictment = indictmentMap.get(process);
-            if (indictment == null) {
-                continue;
-            }
-
-            HardSoftScore totalScore  = indictment.getScore();
-
-            for (ConstraintMatch<HardSoftScore> constraintMatch : indictment.getConstraintMatchSet()) {
-                String constraintName = constraintMatch.getConstraintName();
-                HardSoftScore score = constraintMatch.getScore();
-                log.info("CourseId: {}, Constraint name: {}, Score: {}", process.getId(), constraintName, score);
-            }
-        }
-
-        log.info("Returning solution course list: {}", solution.getCourseList());
-        return solution.getCourseList();
-    }
 
 
     }
