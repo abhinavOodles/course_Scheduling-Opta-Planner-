@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
-    <!-- Solution and entity class definitions -->
+    <!-- Solution and entity class  -->
     <solutionClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.TimeTable</solutionClass>
     <entityClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Course</entityClass>
 
-    <!-- Score director factory configuration -->
+    <!-- Score   configuration -->
     <scoreDirectorFactory>
         <constraintProviderClass>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Constraints.constraintsProvider</constraintProviderClass>
         <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
@@ -34,6 +34,11 @@
         <unimprovedSecondsSpentLimit>60</unimprovedSecondsSpentLimit>
     </termination>
 
+    <eventListener>
+        <listener>
+            <class>com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Service.TimeTableSolverListener</class>
+        </listener>
+    </eventListener>
     <!-- Other configuration options -->
     <moveThreadCount>AUTO</moveThreadCount>
 </solver>

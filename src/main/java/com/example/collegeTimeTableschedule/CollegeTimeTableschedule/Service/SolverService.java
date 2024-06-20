@@ -13,9 +13,12 @@ import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.constraint.ConstraintMatch;
 import org.optaplanner.core.api.score.constraint.Indictment;
 import org.optaplanner.core.api.solver.*;
+import org.optaplanner.core.api.solver.event.SolverEventListener;
 import org.optaplanner.core.config.solver.SolverConfig;
-import org.optaplanner.core.config.solver.SolverManagerConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.optaplanner.core.config.solver.SolverManagerConfig;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -23,12 +26,13 @@ import java.util.List;
 import java.util.Map;
 
 
-@Slf4j
+
 @Service
 @Transactional
 public class SolverService {
 
 
+    private static final Logger log = LoggerFactory.getLogger(SolverService.class);
     @Autowired
     private SolverManager<TimeTable , Long> solverManager ;
     @Autowired
@@ -44,20 +48,22 @@ public class SolverService {
     @Autowired
     private CourseRepo courseRepo;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(TimeTable.class);
 
     SolverService() {
-     SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
-            this.solverManager  = SolverManager.create(solver, new SolverManagerConfig());
+        SolverConfig solver = SolverConfig.createFromXmlResource("Solver.xml");
+        this.solverManager = SolverManager.create(solver, new SolverManagerConfig());
         SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
         this.solutionManager = SolutionManager.create(solverFactory);
-    }
 
+    }
     public List<Course> solverConfig(){
-        TimeTable timeTable = new TimeTable() ;
 
         List<Course> courseList = courseRepo.findAll();
         List<Room> rooms = roomRepo.findAll();
         List<TimeSlot> timeSlots = timeslotRepository.findAll();
+
+        TimeTable timeTable = new TimeTable() ;
 
         timeTable.setCourseList(courseList);
         timeTable.setRoomList(rooms);
