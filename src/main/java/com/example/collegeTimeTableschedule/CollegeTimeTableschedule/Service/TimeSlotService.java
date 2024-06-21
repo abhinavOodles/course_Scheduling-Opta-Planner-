@@ -6,7 +6,7 @@ import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.DayOfWeek;
+
 
 @Service
 public class TimeSlotService {

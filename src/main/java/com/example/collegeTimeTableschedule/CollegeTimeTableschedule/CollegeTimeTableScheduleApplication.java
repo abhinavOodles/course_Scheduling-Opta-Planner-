@@ -12,9 +12,6 @@ public class CollegeTimeTableScheduleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CollegeTimeTableScheduleApplication.class, args);
-
-
-
 	}
 
 

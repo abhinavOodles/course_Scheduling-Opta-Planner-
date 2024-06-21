@@ -7,13 +7,11 @@ import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain.Time
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.CourseRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.RoomRepo;
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Repository.TimeSlotRepo;
-import lombok.extern.slf4j.Slf4j;
 import org.optaplanner.core.api.score.ScoreExplanation;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.score.constraint.ConstraintMatch;
 import org.optaplanner.core.api.score.constraint.Indictment;
 import org.optaplanner.core.api.solver.*;
-import org.optaplanner.core.api.solver.event.SolverEventListener;
 import org.optaplanner.core.config.solver.SolverConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,8 +53,9 @@ public class SolverService {
         this.solverManager = SolverManager.create(solver, new SolverManagerConfig());
         SolverFactory<TimeTable> solverFactory = SolverFactory.create(solver);
         this.solutionManager = SolutionManager.create(solverFactory);
-
+        
     }
+
     public List<Course> solverConfig(){
 
         List<Course> courseList = courseRepo.findAll();

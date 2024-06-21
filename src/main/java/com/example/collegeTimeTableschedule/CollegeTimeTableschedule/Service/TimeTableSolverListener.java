@@ -15,5 +15,13 @@ public class TimeTableSolverListener implements SolverEventListener<TimeTable> {
 
 
 
+    public void startedSolving (){
+        System.out.println("Start Solving :: for :: problemId");
+    }
+
+    public void stopSolved(){
+        System.out.println("Solving stop here :: with finalScore :: ");
+    }
+
 
 }
