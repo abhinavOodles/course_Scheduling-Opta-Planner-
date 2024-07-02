@@ -5,7 +5,7 @@ import org.optaplanner.core.api.solver.event.BestSolutionChangedEvent;
 import org.optaplanner.core.api.solver.event.SolverEventListener;
 
 
-public class TimeTableSolverListener implements SolverEventListener<TimeTable> {
+public class SolverListener implements SolverEventListener<TimeTable> {
 
     @Override
     public void bestSolutionChanged(BestSolutionChangedEvent<TimeTable> solver) {

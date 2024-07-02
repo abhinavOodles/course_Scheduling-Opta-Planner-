@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/timetable")
-public class TimeTableController {
+public class solverController {
 
     @Autowired
     private SolverService service ;
