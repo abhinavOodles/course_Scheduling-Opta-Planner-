@@ -1,15 +1,20 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
+import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Listener.CourseListener;
+import jdk.dynalink.linker.LinkerServices;
 import lombok.Getter;
 import lombok.Setter;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 import org.optaplanner.core.api.domain.variable.InverseRelationShadowVariable;
+import org.optaplanner.core.api.domain.variable.ShadowVariable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -25,8 +30,12 @@ public class Room {
     private String roomName;
 
     @Transient
+    @ShadowVariable(variableListenerClass = CourseListener.class, sourceVariableName = "room")
+    private Long  workingHoursForARoomToAParticularCourse;
+
+    @Transient
     @InverseRelationShadowVariable(sourceVariableName = "room")
-    private Set<Course> courses = new HashSet<>();
+    private List<Course> courses = new ArrayList<>();
 
     @Override
     public String toString() {

@@ -11,9 +11,9 @@
     </scoreDirectorFactory>
 
 
-        <listenerClass> com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Service.TimeTableSolverListener</listenerClass>
-
-
+        <listenerClass>
+            com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Listener.CourseListener
+        </listenerClass>
 
 
     <!-- Solver phases -->
