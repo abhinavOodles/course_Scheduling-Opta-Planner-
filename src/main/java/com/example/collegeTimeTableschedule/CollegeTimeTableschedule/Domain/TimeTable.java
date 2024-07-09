@@ -1,6 +1,6 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
-import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DateTimeDeserializer;
+//import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
@@ -22,7 +22,7 @@ public class TimeTable {
 
     @ValueRangeProvider
     @ProblemFactCollectionProperty
-    @JsonDeserialize(using = DateTimeDeserializer.class)
+   // @JsonDeserialize(using = DateTimeDeserializer.class)
     private List<TimeSlot> timeslotList;
 
 
