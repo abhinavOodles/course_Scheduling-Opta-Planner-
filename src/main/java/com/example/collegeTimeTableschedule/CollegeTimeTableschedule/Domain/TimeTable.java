@@ -1,5 +1,8 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
+import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DateTimeDeserializer;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
 import lombok.Getter;
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
@@ -14,10 +17,12 @@ import java.util.List;
 
 @PlanningSolution
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TimeTable {
 
     @ValueRangeProvider
     @ProblemFactCollectionProperty
+    @JsonDeserialize(using = DateTimeDeserializer.class)
     private List<TimeSlot> timeslotList;
 
 

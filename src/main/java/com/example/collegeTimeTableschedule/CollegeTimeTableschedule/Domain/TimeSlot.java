@@ -1,12 +1,21 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
+import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DateTimeDeserializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import lombok.Data;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TimeSlot {
     @PlanningId
     @Id
@@ -16,7 +25,13 @@ public class TimeSlot {
 
     private DayOfWeek dayOfWeek;
 
+
+    @JsonDeserialize(using = DateTimeDeserializer.class)
+    @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime startTime;
+
+    @JsonDeserialize(using = DateTimeDeserializer.class)
+   @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime endTime;
 
     @Override
@@ -39,35 +54,5 @@ public class TimeSlot {
 
     }
 
-    public DayOfWeek getDayOfWeek() {
-        return dayOfWeek;
-    }
 
-    public void setDayOfWeek(DayOfWeek dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
-    }
 }

@@ -1,12 +1,11 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DTOS;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+
 public class CourseDTO {
     private String subject ;
     private String teacher;

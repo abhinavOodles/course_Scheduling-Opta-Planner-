@@ -1,5 +1,6 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
@@ -11,6 +12,7 @@ import javax.persistence.ManyToOne;
 
 @PlanningEntity
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Course {
 
     @PlanningId

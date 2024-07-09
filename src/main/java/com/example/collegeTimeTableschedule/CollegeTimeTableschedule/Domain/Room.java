@@ -1,6 +1,7 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
 import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Listener.CourseListener;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jdk.dynalink.linker.LinkerServices;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Room {
 
     @PlanningId

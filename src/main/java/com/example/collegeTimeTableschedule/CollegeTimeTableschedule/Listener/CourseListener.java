@@ -47,9 +47,9 @@ public class CourseListener implements VariableListener<TimeTable, Room> {
         }
         else{
             List<Course> courses = room.getCourses() ;
-            for (Course course : courses){
+            for (Course course : courses) {
                 Duration duration = Duration.between(course.getTimeSlot().getEndTime(), course.getTimeSlot().getStartTime());
-                long minutes = duration.toMinutes() ;
+                long minutes = duration.toMinutes();
                 room.setWorkingHoursForARoomToAParticularCourse(minutes);
             }
         }
