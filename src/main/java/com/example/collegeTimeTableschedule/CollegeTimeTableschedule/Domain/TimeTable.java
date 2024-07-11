@@ -1,10 +1,7 @@
 package com.example.collegeTimeTableschedule.CollegeTimeTableschedule.Domain;
 
-//import com.example.collegeTimeTableschedule.CollegeTimeTableschedule.DateTimeDeserializer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
-import lombok.Getter;
 import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
 import org.optaplanner.core.api.domain.solution.PlanningScore;
 import org.optaplanner.core.api.domain.solution.PlanningSolution;
@@ -13,11 +10,13 @@ import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 import org.optaplanner.core.api.solver.SolverStatus;
 
+
 import java.util.List;
 
 @PlanningSolution
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class TimeTable {
 
     @ValueRangeProvider

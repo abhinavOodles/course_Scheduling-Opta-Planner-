@@ -1,1 +1,1235 @@
-{"timeslotList":[{"id":10,"dayOfWeek":"MONDAY","startTime":"09:30:00","endTime":"10:30:00"},{"id":11,"dayOfWeek":"MONDAY","startTime":"10:30:00","endTime":"11:30:00"},{"id":12,"dayOfWeek":"MONDAY","startTime":"11:30:00","endTime":"12:30:00"},{"id":13,"dayOfWeek":"MONDAY","startTime":"12:30:00","endTime":"13:30:00"},{"id":17,"dayOfWeek":"MONDAY","startTime":"13:30:00","endTime":"14:30:00"},{"id":18,"dayOfWeek":"MONDAY","startTime":"15:30:00","endTime":"16:30:00"},{"id":33,"dayOfWeek":"TUESDAY","startTime":"15:30:00","endTime":"16:30:00"},{"id":34,"dayOfWeek":"TUESDAY","startTime":"14:30:00","endTime":"15:30:00"},{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},{"id":36,"dayOfWeek":"WEDNESDAY","startTime":"12:30:00","endTime":"13:30:00"},{"id":37,"dayOfWeek":"WEDNESDAY","startTime":"11:30:00","endTime":"12:30:00"},{"id":38,"dayOfWeek":"WEDNESDAY","startTime":"10:30:00","endTime":"11:30:00"},{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},{"id":40,"dayOfWeek":"THURSDAY","startTime":"14:30:00","endTime":"15:30:00"},{"id":41,"dayOfWeek":"FRIDAY","startTime":"13:30:00","endTime":"14:30:00"},{"id":42,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},{"id":43,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"}],"roomList":[{"id":6,"roomName":"ROOM-A","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":19,"roomName":"ROOM-E","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":20,"roomName":"ROOM-F","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":22,"roomName":"ROOM-B1","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":24,"roomName":"ROOM-D1","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":84,"roomName":"ROOM-F1","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]},{"id":86,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}],"courseList":[{"id":1,"subject":" JAVA","teacher":"Ritu","studentGroup":null,"timeSlot":{"id":37,"dayOfWeek":"WEDNESDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":2,"subject":" JAVA","teacher":"JEETU","studentGroup":null,"timeSlot":{"id":41,"dayOfWeek":"FRIDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":19,"roomName":"ROOM-E","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":3,"subject":" JAVA","teacher":"JEETU","studentGroup":null,"timeSlot":{"id":10,"dayOfWeek":"MONDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":19,"roomName":"ROOM-E","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":4,"subject":" JAVA","teacher":"JEETU","studentGroup":null,"timeSlot":{"id":34,"dayOfWeek":"TUESDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":19,"roomName":"ROOM-E","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":5,"subject":" JAVA","teacher":"JEETU","studentGroup":null,"timeSlot":{"id":37,"dayOfWeek":"WEDNESDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":19,"roomName":"ROOM-E","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":14,"subject":"JAVA","teacher":"Ajay","studentGroup":null,"timeSlot":{"id":13,"dayOfWeek":"MONDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":15,"subject":"C++","teacher":"Ajay","studentGroup":null,"timeSlot":{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":16,"subject":"C++","teacher":"Ajay","studentGroup":null,"timeSlot":{"id":40,"dayOfWeek":"THURSDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":25,"subject":"REACT","teacher":"Jay","studentGroup":null,"timeSlot":{"id":10,"dayOfWeek":"MONDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":22,"roomName":"ROOM-B1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":26,"subject":"REACT","teacher":"Jay","studentGroup":null,"timeSlot":{"id":43,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":22,"roomName":"ROOM-B1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":27,"subject":"REACT","teacher":"Jay","studentGroup":null,"timeSlot":{"id":17,"dayOfWeek":"MONDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":22,"roomName":"ROOM-B1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":28,"subject":"REACT","teacher":"Jay","studentGroup":null,"timeSlot":{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":22,"roomName":"ROOM-B1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":29,"subject":"REACT","teacher":"Vijay","studentGroup":null,"timeSlot":{"id":42,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":30,"subject":"REACT","teacher":"Vijay","studentGroup":null,"timeSlot":{"id":36,"dayOfWeek":"WEDNESDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":31,"subject":"HTML","teacher":"Vijay","studentGroup":null,"timeSlot":{"id":10,"dayOfWeek":"MONDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":32,"subject":"HTML","teacher":"Vijay","studentGroup":null,"timeSlot":{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":44,"subject":"DBMS","teacher":"RENU","studentGroup":null,"timeSlot":{"id":40,"dayOfWeek":"THURSDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":84,"roomName":"ROOM-F1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":45,"subject":"SOFTWARE ENG","teacher":"SACHIN","studentGroup":null,"timeSlot":{"id":12,"dayOfWeek":"MONDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":84,"roomName":"ROOM-F1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":46,"subject":"DBMS","teacher":"Jatin","studentGroup":null,"timeSlot":{"id":38,"dayOfWeek":"WEDNESDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":47,"subject":"Software Development","teacher":"Jatin","studentGroup":null,"timeSlot":{"id":11,"dayOfWeek":"MONDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":48,"subject":"CSS","teacher":"Jatin","studentGroup":null,"timeSlot":{"id":13,"dayOfWeek":"MONDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":49,"subject":"CSS","teacher":"Ajay","studentGroup":null,"timeSlot":{"id":42,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":21,"roomName":"ROOM-A1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":50,"subject":"HUMAN VALUES","teacher":"Shivam","studentGroup":null,"timeSlot":{"id":43,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":51,"subject":"HUMAN VALUES","teacher":"Shivam","studentGroup":null,"timeSlot":{"id":34,"dayOfWeek":"TUESDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":52,"subject":"HUMAN VALUES","teacher":"Shivam","studentGroup":null,"timeSlot":{"id":13,"dayOfWeek":"MONDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":53,"subject":"Technical English","teacher":"Shivam","studentGroup":null,"timeSlot":{"id":41,"dayOfWeek":"FRIDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":54,"subject":"Technical English","teacher":"Shivam","studentGroup":null,"timeSlot":{"id":12,"dayOfWeek":"MONDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":7,"roomName":"ROOM-B","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":55,"subject":"Digital Marketing","teacher":"Anand","studentGroup":null,"timeSlot":{"id":43,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":56,"subject":"Digital Marketing","teacher":"Anand","studentGroup":null,"timeSlot":{"id":33,"dayOfWeek":"TUESDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":57,"subject":"Digital Marketing","teacher":"Anand","studentGroup":null,"timeSlot":{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":58,"subject":"Digital Marketing","teacher":"Anand","studentGroup":null,"timeSlot":{"id":17,"dayOfWeek":"MONDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":59,"subject":"Digital Marketing","teacher":"Anand","studentGroup":null,"timeSlot":{"id":18,"dayOfWeek":"MONDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":85,"roomName":"ROOM-F2","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":60,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":38,"dayOfWeek":"WEDNESDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":61,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":11,"dayOfWeek":"MONDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":62,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":18,"dayOfWeek":"MONDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":63,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":43,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":64,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":17,"dayOfWeek":"MONDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":65,"subject":"Sql","teacher":"Thapa","studentGroup":null,"timeSlot":{"id":34,"dayOfWeek":"TUESDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":66,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":37,"dayOfWeek":"WEDNESDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":67,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":12,"dayOfWeek":"MONDAY","startTime":"11:30:00","endTime":"12:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":68,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":69,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":42,"dayOfWeek":"FRIDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":70,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":71,"subject":"mongodb","teacher":"ABHINAV","studentGroup":null,"timeSlot":{"id":33,"dayOfWeek":"TUESDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":8,"roomName":"ROOM-C","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":72,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":41,"dayOfWeek":"FRIDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":73,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":74,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":38,"dayOfWeek":"WEDNESDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":75,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":33,"dayOfWeek":"TUESDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":76,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":36,"dayOfWeek":"WEDNESDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":77,"subject":"Spring Boot","teacher":"Dheeraj","studentGroup":null,"timeSlot":{"id":40,"dayOfWeek":"THURSDAY","startTime":"14:30:00","endTime":"15:30:00"},"room":{"id":23,"roomName":"ROOM-C1","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":78,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":79,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":41,"dayOfWeek":"FRIDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":80,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":38,"dayOfWeek":"WEDNESDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":81,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":11,"dayOfWeek":"MONDAY","startTime":"10:30:00","endTime":"11:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":82,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":36,"dayOfWeek":"WEDNESDAY","startTime":"12:30:00","endTime":"13:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":83,"subject":"Spring DataJPA","teacher":"Aman","studentGroup":null,"timeSlot":{"id":18,"dayOfWeek":"MONDAY","startTime":"15:30:00","endTime":"16:30:00"},"room":{"id":9,"roomName":"ROOM-D","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":87,"subject":"BI","teacher":"XYXZ","studentGroup":"BSC","timeSlot":{"id":39,"dayOfWeek":"THURSDAY","startTime":"09:30:00","endTime":"10:30:00"},"room":{"id":20,"roomName":"ROOM-F","workingHoursForARoomToAParticularCourse":null,"courses":[]}},{"id":88,"subject":"BI","teacher":"XYXZ","studentGroup":"BCA","timeSlot":{"id":35,"dayOfWeek":"TUESDAY","startTime":"13:30:00","endTime":"14:30:00"},"room":{"id":20,"roomName":"ROOM-F","workingHoursForARoomToAParticularCourse":null,"courses":[]}}],"score":{"initScore":0,"hardScore":-66,"softScore":0,"feasible":false,"zero":false,"solutionInitialized":true},"solverStatus":null}
+{
+  "courseList": [
+    {
+      "id": 4,
+      "subject": "Java",
+      "teacher": "Renu Saini",
+      "studentGroup": "BCA",
+      "timeSlot": {
+        "id": 39,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 28,
+        "roomName": "ROOM-A1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 5,
+      "subject": "HTML",
+      "teacher": "Renu Saini",
+      "studentGroup": "BCA",
+      "timeSlot": {
+        "id": 59,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 28,
+        "roomName": "ROOM-A1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 6,
+      "subject": "HTML",
+      "teacher": "Renu Saini",
+      "studentGroup": "MCA",
+      "timeSlot": {
+        "id": 13,
+        "dayOfWeek": null,
+        "startTime": "11:30:00",
+        "endTime": "12:30:00"
+      },
+      "room": {
+        "id": 28,
+        "roomName": "ROOM-A1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 7,
+      "subject": "JAVA",
+      "teacher": "Renu Saini",
+      "studentGroup": "MCA",
+      "timeSlot": {
+        "id": 86,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 28,
+        "roomName": "ROOM-A1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 15,
+      "subject": "C++",
+      "teacher": "SACHIV JI",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 77,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 16,
+      "subject": "C++",
+      "teacher": "PARDHAN",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 94,
+        "dayOfWeek": "SUNDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 27,
+        "roomName": "ROOM-F",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 17,
+      "subject": "C++",
+      "teacher": "VIKAS",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 36,
+        "dayOfWeek": null,
+        "startTime": "12:30:00",
+        "endTime": "13:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 18,
+      "subject": "Java",
+      "teacher": "q",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 92,
+        "dayOfWeek": "MONDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 19,
+      "subject": "Java",
+      "teacher": "q",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 83,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 20,
+      "subject": "Java",
+      "teacher": "q",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 94,
+        "dayOfWeek": "SUNDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 21,
+      "subject": "C++",
+      "teacher": "cx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 84,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 25,
+        "roomName": "ROOM-D",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 22,
+      "subject": "C++",
+      "teacher": "cx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 10,
+        "dayOfWeek": null,
+        "startTime": "09:30:00",
+        "endTime": "10:30:00"
+      },
+      "room": {
+        "id": 25,
+        "roomName": "ROOM-D",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 23,
+      "subject": "JAva",
+      "teacher": "Rinki",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 82,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 27,
+        "roomName": "ROOM-F",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 24,
+      "subject": "JAva",
+      "teacher": "Rinki",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 12,
+        "dayOfWeek": null,
+        "startTime": "10:30:00",
+        "endTime": "11:30:00"
+      },
+      "room": {
+        "id": 27,
+        "roomName": "ROOM-F",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 33,
+      "subject": "CSS",
+      "teacher": "Ajay",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 59,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 34,
+      "subject": "CSS",
+      "teacher": "Ajay",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 90,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 35,
+      "subject": "CSS",
+      "teacher": "Ajay",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 87,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 40,
+      "subject": "Java",
+      "teacher": "q",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 75,
+        "dayOfWeek": null,
+        "startTime": "12:30:00",
+        "endTime": "13:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 41,
+      "subject": "CSS",
+      "teacher": "qx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 12,
+        "dayOfWeek": null,
+        "startTime": "10:30:00",
+        "endTime": "11:30:00"
+      },
+      "room": {
+        "id": 29,
+        "roomName": "ROOM-B1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 42,
+      "subject": "CSS",
+      "teacher": "qx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 59,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 29,
+        "roomName": "ROOM-B1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 43,
+      "subject": "JAVA",
+      "teacher": "qx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 8,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 29,
+        "roomName": "ROOM-B1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 44,
+      "subject": "JAVA",
+      "teacher": "qx",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 75,
+        "dayOfWeek": null,
+        "startTime": "12:30:00",
+        "endTime": "13:30:00"
+      },
+      "room": {
+        "id": 29,
+        "roomName": "ROOM-B1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 45,
+      "subject": "C++",
+      "teacher": "DD",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 11,
+        "dayOfWeek": null,
+        "startTime": "09:30:00",
+        "endTime": "10:30:00"
+      },
+      "room": {
+        "id": 26,
+        "roomName": "ROOM-E",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 46,
+      "subject": "C++",
+      "teacher": "DD",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 82,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 26,
+        "roomName": "ROOM-E",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 47,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 37,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 48,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 14,
+        "dayOfWeek": null,
+        "startTime": "11:30:00",
+        "endTime": "12:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 49,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 89,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 50,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 86,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 51,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 13,
+        "dayOfWeek": null,
+        "startTime": "11:30:00",
+        "endTime": "12:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 52,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 76,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 53,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 39,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 54,
+      "subject": "DBMS",
+      "teacher": "Rohit",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 93,
+        "dayOfWeek": "MONDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 1,
+        "roomName": "Room-A",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 55,
+      "subject": "NETWORKIN",
+      "teacher": "VIRAT",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 87,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 56,
+      "subject": "NETWORKIN",
+      "teacher": "VIRAT",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 13,
+        "dayOfWeek": null,
+        "startTime": "11:30:00",
+        "endTime": "12:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 57,
+      "subject": "NETWORKIN",
+      "teacher": "VIRAT",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 89,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 58,
+      "subject": "NETWORKIN",
+      "teacher": "VIRAT",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 88,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 60,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 93,
+        "dayOfWeek": "MONDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 61,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 38,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 62,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 36,
+        "dayOfWeek": null,
+        "startTime": "12:30:00",
+        "endTime": "13:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 63,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 83,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 64,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 79,
+        "dayOfWeek": null,
+        "startTime": "10:30:00",
+        "endTime": "11:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 65,
+      "subject": "Software Engineering",
+      "teacher": "Rahul",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 77,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 66,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 88,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 67,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 76,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 68,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 91,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 69,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 85,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 70,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 78,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 71,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 39,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 72,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 11,
+        "dayOfWeek": null,
+        "startTime": "09:30:00",
+        "endTime": "10:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 73,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 9,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 74,
+      "subject": "Digital Electronics",
+      "teacher": "Boomraah",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 92,
+        "dayOfWeek": "MONDAY",
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 2,
+        "roomName": "Room-B",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 80,
+      "subject": " fx",
+      "teacher": "f",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 90,
+        "dayOfWeek": null,
+        "startTime": "15:30:00",
+        "endTime": "16:30:00"
+      },
+      "room": {
+        "id": 3,
+        "roomName": "Room-C",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 81,
+      "subject": " fx0",
+      "teacher": "f0",
+      "studentGroup": null,
+      "timeSlot": {
+        "id": 38,
+        "dayOfWeek": null,
+        "startTime": "14:30:00",
+        "endTime": "15:30:00"
+      },
+      "room": {
+        "id": 32,
+        "roomName": "ROOM-E1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    },
+    {
+      "id": 95,
+      "subject": "BI",
+      "teacher": "XYXZ",
+      "studentGroup": "BSC",
+      "timeSlot": {
+        "id": 88,
+        "dayOfWeek": null,
+        "startTime": "13:30:00",
+        "endTime": "14:30:00"
+      },
+      "room": {
+        "id": 31,
+        "roomName": "ROOM-D1",
+        "workingHoursForARoomToAParticularCourse": null,
+        "courses": []
+      }
+    }
+  ],
+  "roomList": [
+    {
+      "id": 1,
+      "roomName": "Room-A",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 2,
+      "roomName": "Room-B",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 3,
+      "roomName": "Room-C",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 25,
+      "roomName": "ROOM-D",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 26,
+      "roomName": "ROOM-E",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 27,
+      "roomName": "ROOM-F",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 28,
+      "roomName": "ROOM-A1",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 29,
+      "roomName": "ROOM-B1",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 30,
+      "roomName": "ROOM-C1",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 31,
+      "roomName": "ROOM-D1",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    },
+    {
+      "id": 32,
+      "roomName": "ROOM-E1",
+      "workingHoursForARoomToAParticularCourse": null,
+      "courses": []
+    }
+  ],
+  "score": {
+    "initScore": 0,
+    "hardScore": -19,
+    "softScore": 0,
+    "feasible": false,
+    "zero": false,
+    "solutionInitialized": true
+  },
+  "solverStatus": null,
+  "timeslotList": [
+    {
+      "id": 8,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 9,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 10,
+      "dayOfWeek": null,
+      "startTime": "09:30:00",
+      "endTime": "10:30:00"
+    },
+    {
+      "id": 11,
+      "dayOfWeek": null,
+      "startTime": "09:30:00",
+      "endTime": "10:30:00"
+    },
+    {
+      "id": 12,
+      "dayOfWeek": null,
+      "startTime": "10:30:00",
+      "endTime": "11:30:00"
+    },
+    {
+      "id": 13,
+      "dayOfWeek": null,
+      "startTime": "11:30:00",
+      "endTime": "12:30:00"
+    },
+    {
+      "id": 14,
+      "dayOfWeek": null,
+      "startTime": "11:30:00",
+      "endTime": "12:30:00"
+    },
+    {
+      "id": 36,
+      "dayOfWeek": null,
+      "startTime": "12:30:00",
+      "endTime": "13:30:00"
+    },
+    {
+      "id": 37,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 38,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 39,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 59,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 75,
+      "dayOfWeek": null,
+      "startTime": "12:30:00",
+      "endTime": "13:30:00"
+    },
+    {
+      "id": 76,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 77,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 78,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 79,
+      "dayOfWeek": null,
+      "startTime": "10:30:00",
+      "endTime": "11:30:00"
+    },
+    {
+      "id": 82,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 83,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 84,
+      "dayOfWeek": null,
+      "startTime": "14:30:00",
+      "endTime": "15:30:00"
+    },
+    {
+      "id": 85,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 86,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 87,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 88,
+      "dayOfWeek": null,
+      "startTime": "13:30:00",
+      "endTime": "14:30:00"
+    },
+    {
+      "id": 89,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 90,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 91,
+      "dayOfWeek": null,
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 92,
+      "dayOfWeek": "MONDAY",
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 93,
+      "dayOfWeek": "MONDAY",
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    },
+    {
+      "id": 94,
+      "dayOfWeek": "SUNDAY",
+      "startTime": "15:30:00",
+      "endTime": "16:30:00"
+    }
+  ]
+}
